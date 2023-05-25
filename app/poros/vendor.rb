@@ -1,3 +1,5 @@
 class Vendor
-  def initialize
+  def initialize(data)
+
+  end
 end
