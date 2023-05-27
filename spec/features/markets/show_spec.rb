@@ -6,6 +6,7 @@ RSpec.describe "markets#show" do
       market = MarketsFacade.new(markets[50].id.to_i).market
 
       visit market_path(market.id)
+
       expect(page).to have_content("Hiawatha Thriftway farmers market")
       expect(page).to have_content("719 NORTH FIRST STREET")
       expect(page).to have_content("Hiawatha")
@@ -13,10 +14,10 @@ RSpec.describe "markets#show" do
       expect(page).to have_content("66434")
     end
 
-    xit "each vendor's name is a link to vendor show page", :vcr do
+    it "each vendor's name is a link to vendor show page", :vcr do
       markets = MarketsFacade.new.get_markets
       market = MarketsFacade.new(markets[50].id).market
-      visit market_path(market[:data][:id])
+      visit market_path(market.id)
 
       within("#vendors") do
         expect(page).to have_content("Jamin Good Time")

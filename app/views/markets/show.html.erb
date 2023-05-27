@@ -1,6 +1,6 @@
 <h2><%= @facade.market.name %></h2>
 <p><%= @facade.market.address %></p>
-<p><% "#{@facade.market.city}, #{@facade.market.state} #{@facade.market.zip}" %><p>
+<p><%= "#{@facade.market.city}, #{@facade.market.state} #{@facade.market.zip}" %><p>
 <section id="vendors" >
   <ul>
     <% @facade.vendors.each do |vendor| %>

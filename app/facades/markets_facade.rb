@@ -14,8 +14,8 @@ class MarketsFacade
   end
 
   def vendors
-    @_vendors ||= service.vendors(@id).map do |vendor_info|
-      Vendor.new(vendor_info.second.first[:attributes])
+    @_vendors ||= service.vendors(@id)[:data].map do |vendor_info|
+      Vendor.new(vendor_info)
     end
   end
 
