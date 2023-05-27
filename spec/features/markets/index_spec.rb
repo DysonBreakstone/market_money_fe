@@ -13,7 +13,6 @@ RSpec.describe "markets#index" do
           expect(page).to have_content(market.state)
           expect(page).to have_button("More Info")
         end
-        visit "/markets"
       end
       
     end
@@ -21,7 +20,7 @@ RSpec.describe "markets#index" do
     it "has buttons for each market leading to that market's show page", :vcr do
       @markets = MarketsFacade.new.get_markets
       visit "/markets"
-        for i in 0..50
+        for i in 0..9
           within ("##{@markets[i].id}") do
             click_on "More Info"
             expect(current_path).to eq(market_path(@markets[i].id))

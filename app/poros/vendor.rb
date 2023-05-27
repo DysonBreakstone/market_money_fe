@@ -7,7 +7,7 @@ class Vendor
               :description
 
   def initialize(data)
-    @id = data[:id]
+    @id = data[:id].to_i
     @name = data[:attributes][:name]
     @contact_name = data[:attributes][:contact_name]
     @phone = data[:attributes][:contact_phone]
