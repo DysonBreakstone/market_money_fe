@@ -1,0 +1,10 @@
+<h2><%= @facade.market.name %></h2>
+<p><%= @facade.market.address %></p>
+<p><% "#{@facade.market.city}, #{@facade.market.state} #{@facade.market.zip}" %><p>
+<section id="vendors" >
+  <ul>
+    <% @facade.vendors.each do |vendor| %>
+      <li><%= link_to vendor.name, vendor_path(vendor.id) %></li>
+    <% end %>
+  </ul>
+</section>

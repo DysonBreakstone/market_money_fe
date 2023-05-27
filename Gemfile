@@ -48,6 +48,8 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem 'faraday'
+
 group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
@@ -55,6 +57,8 @@ group :test do
   gem 'orderly'
   gem 'simplecov'
   gem 'launchy'
+  gem "webmock"
+  gem "vcr"
 end
 
 group :development, :test do

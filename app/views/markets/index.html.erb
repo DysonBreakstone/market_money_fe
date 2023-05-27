@@ -1,0 +1,6 @@
+<% @facade.get_markets.each do |market| %>
+  <section id=<%= market.id %>>
+    <%= "#{market.name}: #{market.city}, #{market.state}" %>
+    <%= button_to 'More Info', market_path(market.id), method: :get %><br/>
+  </section>
+<% end %>
